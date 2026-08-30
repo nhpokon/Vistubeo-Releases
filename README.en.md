@@ -14,8 +14,8 @@ Vistubeo is the successor to the application's former development name, QuickTub
 - Retrieve and display YouTube transcripts, video information, and thumbnails
 - Search transcripts and open the matching time in YouTube
 - Use AI summaries, chapters, and answers to questions about a video
-- Translate foreign-language transcripts into Japanese with AI
-- Switch between Original, Japanese Translation, and Original + Japanese
+- Translate foreign-language transcripts into the configured AI output language
+- Switch between Original, AI Translation, and Original + AI Translation
 - Save displayed summaries and related information as Markdown
 
 ## Public Edition limitations
@@ -45,6 +45,12 @@ Microsoft Visual C++ Redistributable x64 is required. It is not bundled in the V
 5. Use AI questions, AI translation, or Markdown export as needed.
 
 If a video URL contains a playlist query, Vistubeo processes only the video specified by that URL. Playlist-only URLs are not supported.
+
+## Settings
+
+When you save Settings, the display language, font size, summary length, timestamp count, AI output language, and automatic-AI settings apply immediately. The Settings window stays open and continues to show the saved current values.
+
+Choose **Match Display Language**, **Japanese**, or **English** for AI Output Language. **Match Display Language** uses the current display language; **Japanese** and **English** stay fixed independently of the display language. This setting applies to AI summaries, AI chapters, answers to AI questions, AI translation of transcripts, automatic summaries, automatic translations, and live AI summaries in Full Edition. Saving Settings alone does not call the OpenAI API.
 
 ## OpenAI API key (BYOK)
 
@@ -83,7 +89,7 @@ Connection tests use a temporary OpenAI client for the entered key and set `stor
 
 ## AI translation of transcripts
 
-Use **Translate to Japanese with AI** to translate a foreign-language transcript into Japanese. This is an OpenAI API-based feature. After translation, you can switch between the original, Japanese translation, and both. Changing the display mode does not make another OpenAI API request.
+Use **Translate with AI** to translate a foreign-language transcript into the configured AI output language. This is an OpenAI API-based feature. After translation, you can switch between the original, AI translation, and both. Changing the display mode does not make another OpenAI API request. If the transcript language already matches the configured AI output language, Vistubeo does not call the translation API.
 
 When you run AI summaries, questions, or translations, the required transcript text, timestamped transcript text, and question text are sent to the OpenAI API. Video and audio files themselves are not sent to the OpenAI API. See the [Privacy Policy](PRIVACY.md) for details.
 
