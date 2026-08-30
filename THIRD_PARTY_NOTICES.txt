@@ -1,0 +1,310 @@
+Vistubeo Third-Party Software Notices
+
+Historical verification baseline: QuickTube v0.49.0 (v0.50.0 candidate)
+Generated / verified date: 2026-08-21
+
+This file records third-party software expected in the Windows x64 onedir
+distribution. License texts are stored in the adjacent LICENSES directory.
+Vistubeo's own license or EULA is intentionally not defined by this file.
+
+IMPORTANT DISTRIBUTION STATUS
+The repository contains a v0.51 source-bundle generator for the custom PyAV
+wheel and separately bundled FFmpeg executable. The standalone FFmpeg is the
+audited native-codec candidate described below; its fixed upstream source is
+recorded in the manifest and source bundle. Remaining general-distribution
+items are listed in SOURCE_COMPLIANCE.md.
+
+--------------------------------------------------------------------------
+Component: PyAV Python bindings
+Version: 18.0.0, source commit 54a4395bb4cdd9cdd53ff6216c50b69f6475c13d
+Bundled form: Python extension modules in an audited custom wheel
+Copyright: See BSD-3-Clause-PyAV.txt
+License: BSD-3-Clause
+License file: LICENSES/BSD-3-Clause-PyAV.txt
+Source: https://github.com/PyAV-Org/PyAV
+Modification status: Python binding source is unmodified; custom build inputs are used.
+Corresponding source: Upstream repository and pinned commit above.
+
+--------------------------------------------------------------------------
+Component: FFmpeg libraries inside the custom PyAV wheel
+Version: FFmpeg 8.1.2
+Bundled form: Dynamically linked avcodec/avdevice/avfilter/avformat/avutil/
+              swresample/swscale DLLs
+Copyright: FFmpeg contributors; see the referenced license
+License: LGPL-3.0-or-later (--enable-version3; GPL/nonfree disabled)
+License file: LICENSES/LGPL-3.0-or-later-FFmpeg.txt
+Source: https://github.com/FFmpeg/FFmpeg/tree/n8.1.2
+Modification status: Custom PyAV-compatible LGPL build; x264 and x265 disabled.
+Corresponding source: Complete in the local v0.51 generator for the audited
+                      wheel, including exact MSYS2 runtime sources. Not yet published.
+
+--------------------------------------------------------------------------
+Component: Other codec/runtime DLLs inside the custom PyAV wheel
+Version: Determined by pinned pyav-ffmpeg source revision
+Bundled form: Shared codec/runtime libraries including dav1d, LAME, Opus,
+              and SVT-AV1; exact inventory is build-artifact dependent
+Copyright: See each upstream source and license in the v0.51 source bundle
+License: Multiple permissive/LGPL-compatible licenses; see the exact DLL map
+License file: Common texts in LICENSES and the local v0.51 source bundle
+Source: Pinned pyav-ffmpeg build inputs
+Modification status: Built by the audited custom-wheel workflow; x264/x265 absent.
+Corresponding source: Complete in the local v0.51 generator for the audited
+                      wheel; all 23 DLLs have fixed source mappings. Not published.
+
+--------------------------------------------------------------------------
+Component: Standalone FFmpeg executable
+Version: 9.0.1
+Bundled form: resources/ffmpeg.exe, Windows x64 static native-codec build
+Copyright: FFmpeg contributors
+License: LGPL-3.0-or-later
+License file: LICENSES/LGPL-3.0-or-later-FFmpeg.txt
+Source: https://github.com/FFmpeg/FFmpeg commit b3ef323dd256d4b94ad5fd60b04ff7cba7df4259
+Modification status: static native-codec build; GPL/nonfree, x264/x265,
+                     Chromaprint, FFTW3, and libavdevice disabled.
+Corresponding source: fixed source archive and SHA256 are recorded in the
+                      local v0.51 generator. Binary SHA256:
+  a9d070f88cadbf999c331e38b4b6567dc90fd3a41f5aaa4b2bff92af48e018b5
+
+--------------------------------------------------------------------------
+Component: faster-whisper Python package
+Version: 1.2.1
+Bundled form: Python package
+Copyright: SYSTRAN and contributors; see MIT.txt
+License: MIT
+License file: LICENSES/MIT.txt
+Source: https://github.com/SYSTRAN/faster-whisper/tree/v1.2.1
+Modification status: Unmodified.
+Corresponding source: Upstream repository.
+
+--------------------------------------------------------------------------
+Component: faster-whisper base model
+Version: snapshot ebe41f70d5b6dfa9166e2c581c45c9c0cfc57b66
+Bundled form: resources/models/faster-whisper-base
+Copyright: OpenAI Whisper / SYSTRAN conversion; see upstream model card
+License: MIT
+License file: LICENSES/MIT.txt
+Source: https://huggingface.co/Systran/faster-whisper-base/tree/ebe41f70d5b6dfa9166e2c581c45c9c0cfc57b66
+Modification status: Unmodified fixed snapshot.
+Corresponding source: Upstream model repository and snapshot above.
+
+--------------------------------------------------------------------------
+Component: CTranslate2
+Version: 4.8.1
+Bundled form: Python package and ctranslate2.dll
+Copyright: OpenNMT and contributors; see component license
+License: MIT
+License file: LICENSES/component-notices/CTranslate2-4.8.1-LICENSE.txt
+Source: https://github.com/OpenNMT/CTranslate2/tree/v4.8.1
+Modification status: Unmodified wheel content.
+Corresponding source: Upstream repository.
+
+--------------------------------------------------------------------------
+Component: Intel OpenMP Runtime Library
+Package version: 2025.3.0.640
+Bundled form: libiomp5md.dll via CTranslate2 4.8.1 Windows wheel
+SHA256: 982233366b0afcda1e0f55a0b134097e35b779613f54ddb69e685e6cd06b755f
+Copyright: Copyright (C) 1997-2025, Intel Corporation. All rights reserved.
+License: Intel Simplified Software License (Version October 2022)
+License file: LICENSES/component-notices/Intel-OpenMP-2025.3.0.640-LICENSE.txt
+              LICENSES/component-notices/Intel-OpenMP-2025.3.0.640-ThirdPartyPrograms.txt
+Source: https://www.nuget.org/packages/intelopenmp.redist.win/2025.3.0.640
+Modification status: Unmodified binary.
+Redistribution basis: Intel-owned `intelopenmp.redist.win` formal runtime-redist
+                      package, which includes this exact DLL under
+                      runtimes/win-x64/native/libiomp5md.dll. Intel's oneAPI
+                      documentation identifies `intelopenmp.redist.<platform>`
+                      as the Intel OpenMP runtime redistributable package.
+Corresponding source: No source offer is required by the supplied Intel
+                      Simplified Software License or the listed OpenMP notices.
+
+--------------------------------------------------------------------------
+Optional system dependency: Deno JavaScript runtime
+Bundled form: Not redistributed with Vistubeo.
+Purpose: yt-dlp can use a compatible Deno installed by the user and available
+         on PATH to solve YouTube JavaScript challenges. Vistubeo first allows
+         yt-dlp to proceed without a runtime when Deno is unavailable.
+Version requirement: Determined by the bundled yt-dlp version. yt-dlp 2026.7.4
+                     requires Deno 2.3.0 or newer.
+Installation and license terms: Provided separately by the Deno distributor;
+                                no Deno binary or Deno license payload is part
+                                of the Vistubeo distribution.
+
+--------------------------------------------------------------------------
+Component: yt-dlp
+Version: 2026.7.4
+Bundled form: Python package
+Copyright: yt-dlp contributors; see license
+License: The Unlicense
+License file: LICENSES/Unlicense-yt-dlp.txt
+Source: https://github.com/yt-dlp/yt-dlp
+Modification status: Unmodified.
+Corresponding source: Upstream repository.
+
+--------------------------------------------------------------------------
+Component: yt-dlp-ejs
+Version: 0.8.0
+Bundled form: Python package containing JavaScript challenge solver data
+Copyright: yt-dlp/ejs contributors
+License: The Unlicense
+License file: LICENSES/Unlicense-yt-dlp.txt
+Source: https://github.com/yt-dlp/ejs/tree/0.8.0
+Modification status: Unmodified package.
+Corresponding source: Upstream repository. Runtime subcomponents include
+                      astring 1.9.0 (MIT) and meriyah 6.1.4 (ISC).
+
+--------------------------------------------------------------------------
+Component: astring
+Version: 1.9.0
+Bundled form: JavaScript incorporated in yt-dlp-ejs solver data
+Copyright: astring contributors
+License: MIT
+License file: LICENSES/component-notices/astring-1.9.0-LICENSE.txt
+Source: https://github.com/davidbonnet/astring/tree/v1.9.0
+Modification status: Incorporated by upstream yt-dlp-ejs.
+Corresponding source: Upstream repository.
+
+--------------------------------------------------------------------------
+Component: meriyah
+Version: 6.1.4
+Bundled form: JavaScript incorporated in yt-dlp-ejs solver data
+Copyright: Yusuke Suzuki and contributors
+License: ISC
+License file: LICENSES/ISC-meriyah.txt
+Source: https://github.com/meriyah/meriyah/tree/v6.1.4
+Modification status: Incorporated by upstream yt-dlp-ejs.
+Corresponding source: Upstream repository.
+
+--------------------------------------------------------------------------
+Component: OpenAI Python SDK
+Version: 2.53.0
+Bundled form: Python package
+Copyright: OpenAI
+License: Apache-2.0
+License file: LICENSES/Apache-2.0.txt
+Source: https://github.com/openai/openai-python
+Modification status: Unmodified. API service terms are separate from this SDK license.
+Corresponding source: Upstream repository.
+
+--------------------------------------------------------------------------
+Component: ONNX Runtime
+Version: 1.28.0
+Bundled form: Python package and runtime DLLs
+Copyright: Microsoft Corporation and contributors
+License: MIT plus bundled third-party notices
+License file: LICENSES/component-notices/ONNX-Runtime-1.28.0-LICENSE.txt
+              LICENSES/component-notices/ONNX-Runtime-1.28.0-ThirdPartyNotices.txt
+Source: https://github.com/microsoft/onnxruntime
+Modification status: Unmodified wheel content.
+Corresponding source: Upstream repository and third-party notice file.
+
+--------------------------------------------------------------------------
+Component: NumPy / bundled OpenBLAS and LAPACK notices
+Version: NumPy 2.5.1
+Bundled form: Python package and native libraries
+Copyright: NumPy developers and listed third parties
+License: BSD-3-Clause and licenses listed in the bundled NumPy license file
+License file: LICENSES/component-notices/NumPy-2.5.1-LICENSE.txt
+Source: https://github.com/numpy/numpy
+Modification status: Unmodified wheel content.
+Corresponding source: Upstream repository; bundled license includes OpenBLAS,
+                      LAPACK and GCC runtime exception notices.
+
+--------------------------------------------------------------------------
+Component: Python runtime
+Version: 3.14.6
+Bundled form: PyInstaller-packaged CPython runtime and standard library
+Copyright: Python Software Foundation and contributors
+License: PSF License Agreement and incorporated notices
+License file: LICENSES/PSF-Python-3.14.txt
+Source: https://github.com/python/cpython/tree/v3.14.6
+Modification status: Unmodified runtime packaged by PyInstaller.
+Corresponding source: CPython upstream tag above.
+
+--------------------------------------------------------------------------
+Component: Tcl/Tk runtime
+Version: Distributed with CPython 3.14.6
+Bundled form: Tcl/Tk runtime libraries and data
+Copyright: The Regents of the University of California, Sun Microsystems,
+           Scriptics Corporation, ActiveState Corporation, and contributors
+License: Tcl/Tk terms
+License file: LICENSES/Tcl-Tk.txt
+Source: https://www.tcl-lang.org/ and https://www.tcl.tk/
+Modification status: Unmodified CPython runtime dependency.
+Corresponding source: Upstream Tcl/Tk projects.
+
+--------------------------------------------------------------------------
+Component: PyInstaller bootloader/runtime
+Version: 6.22.2
+Bundled form: Windows executable bootloader and runtime hooks
+Copyright: PyInstaller Development Team and contributors
+License: GPL-2.0-or-later with the PyInstaller bootloader exception
+License file: LICENSES/PyInstaller-COPYING.txt
+Source: https://github.com/pyinstaller/pyinstaller/tree/v6.22.2
+Modification status: Unmodified.
+Corresponding source: Upstream repository. The bootloader exception permits
+                      distribution of the generated application under other terms.
+
+--------------------------------------------------------------------------
+Component: certifi
+Version: 2026.7.22
+Bundled form: Python package and CA certificate bundle
+Copyright: certifi contributors
+License: MPL-2.0
+License file: LICENSES/MPL-2.0-certifi.txt
+Source: https://github.com/certifi/python-certifi
+Modification status: Unmodified.
+Corresponding source: Upstream repository.
+
+--------------------------------------------------------------------------
+Component: Pillow
+Version: 12.3.0
+Bundled form: Python package and native imaging libraries
+Copyright: Pillow contributors and listed third parties
+License: HPND/Pillow license plus bundled third-party terms
+License file: LICENSES/component-notices/Pillow-12.3.0-LICENSE.txt
+Source: https://github.com/python-pillow/Pillow
+Modification status: Unmodified wheel content.
+Corresponding source: Upstream repository and bundled license file.
+
+--------------------------------------------------------------------------
+Component: python-dotenv
+Version: 1.2.2
+Bundled form: Python package
+Copyright: python-dotenv contributors
+License: BSD-3-Clause
+License file: LICENSES/component-notices/python-dotenv-1.2.2-LICENSE.txt
+Source: https://github.com/theskumar/python-dotenv
+Modification status: Unmodified.
+Corresponding source: Upstream repository.
+
+--------------------------------------------------------------------------
+Component: youtube-transcript-api
+Version: 1.2.4
+Bundled form: Python package
+Copyright: youtube-transcript-api contributors
+License: MIT
+License file: LICENSES/component-notices/youtube-transcript-api-1.2.4-LICENSE.txt
+Source: https://github.com/jdepoix/youtube-transcript-api
+Modification status: Unmodified.
+Corresponding source: Upstream repository.
+
+--------------------------------------------------------------------------
+Other Python dependencies in the verified v0.49 build environment
+
+The following components are unmodified packages from their upstream projects.
+Their license families are represented by the license texts and component
+notices in LICENSES. Exact package metadata remains the authoritative source:
+
+altgraph 0.17.5; annotated-types 0.8.0; anyio 4.14.2; charset-normalizer
+3.4.9; click 8.4.2; colorama 0.4.6; defusedxml 0.7.1; distro 1.9.0;
+filelock 3.32.2; flatbuffers 25.12.19; fsspec 2026.7.0; h11 0.16.0;
+hf-xet 1.6.0; httpcore 1.0.9; httpx 0.28.1; huggingface-hub 1.26.1;
+idna 3.18; jiter 0.16.0; packaging 26.3; pefile 2024.8.26; protobuf
+7.35.1; pydantic 2.13.4; pydantic-core 2.46.4; pyinstaller-hooks-contrib
+2026.6; pywin32-ctypes 0.2.3; PyYAML 6.0.3; requests 2.34.2; sniffio
+1.3.1; tokenizers 0.23.1; tqdm 4.70.0; typing_extensions 4.16.0;
+typing-inspection 0.4.2; urllib3 2.7.0.
+
+The older repository dist/QuickTube directory is not the verified inventory
+for this notice because it may contain obsolete x264/x265 libraries. Only a
+fresh build produced by build_distribution.py is eligible for release audit.

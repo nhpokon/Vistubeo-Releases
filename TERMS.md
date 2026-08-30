@@ -80,7 +80,7 @@ Vistubeo本体の著作権その他の権利は、運営者または正当な権
 
 本アプリは、オープンソースソフトウェアおよび第三者コンポーネントを利用しています。これらには、それぞれのライセンス条件が適用されます。
 
-詳細は、各配布ZIPに含まれるThird-Party Notices、LICENSESおよびSource Complianceを確認してください。本規約は、第三者ライセンスにより利用者へ認められた権利を制限するものではありません。
+詳細は、配布物または公開ページに含まれる[Third-Party Notices](THIRD_PARTY_NOTICES.txt)、[LICENSES](LICENSES/)および[Source Compliance](SOURCE_COMPLIANCE.md)を確認してください。本規約は、第三者ライセンスにより利用者へ認められた権利を制限するものではありません。
 
 ## 第11条 プライバシー
 
