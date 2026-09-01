@@ -37,6 +37,8 @@ Public Editionは音声ダウンロードや音声文字起こしを行わない
 
 現行版には、Vistubeo運営者へ利用状況、analytics、crash report、telemetry、usage statisticsを自動送信する機能はありません。
 
+「起動時にアップデートを確認」が有効な場合、または利用者が設定画面から手動確認を実行した場合、Vistubeoは公開配布先であるGitHub Releasesへ通常のHTTPSリクエストを送信します。この確認は新しい安定版の有無を調べるためのもので、analyticsやtrackingではありません。OpenAI APIキー、YouTube URL、字幕、AI出力、ローカルパス、PCのユーザー名、固有識別子はこのリクエストへ含めません。起動時の確認は設定から無効にできます。
+
 Vistubeoは字幕本文、翻訳本文、質問本文、APIキー、Cookieを意図的に診断ログへ出力しません。ただし、第三者ライブラリが生成する例外メッセージの内容まで完全に管理できるものではありません。
 
 ## 7. 第三者サービス

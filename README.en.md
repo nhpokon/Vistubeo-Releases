@@ -52,6 +52,8 @@ When you save Settings, the display language, font size, summary length, timesta
 
 Choose **Match Display Language**, **Japanese**, or **English** for AI Output Language. **Match Display Language** uses the current display language; **Japanese** and **English** stay fixed independently of the display language. This setting applies to AI summaries, AI chapters, answers to AI questions, AI translation of transcripts, automatic summaries, automatic translations, and live AI summaries in Full Edition. Saving Settings alone does not call the OpenAI API.
 
+By default, Vistubeo checks GitHub Releases once after startup and shows an in-app notice only when a newer stable version is available. Turn off **Check for updates at startup** in Settings to disable this request from the next startup. Even when it is off, you can check manually with **Check for Updates Now** in Settings. Vistubeo does not automatically download or install updates.
+
 ## OpenAI API key (BYOK)
 
 AI summaries, AI chapters, AI questions, and AI translation require your own OpenAI API key. Vistubeo can still start without an API key, and transcript and video-information features remain available.
