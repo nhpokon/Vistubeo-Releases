@@ -36,6 +36,12 @@ Vistubeo Public Edition is distributed as a Windows x64 onedir ZIP. There is no 
 
 Microsoft Visual C++ Redistributable x64 is required. It is not bundled in the Vistubeo ZIP, and Vistubeo may not start if it is missing. See Microsoft's [Latest supported Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and install the x64 version. The direct installer is [vc_redist.x64.exe](https://aka.ms/vc14/vc_redist.x64.exe).
 
+## Improvements in v0.59.0
+
+- Improved the Settings window so it is less likely to extend beyond the screen on lower-resolution displays.
+- Preserved scrolling and MouseWheel operation in the Settings window.
+- Performed stability checks that include repeated operations.
+
 ## Basic use
 
 1. Start `Vistubeo.exe`.
