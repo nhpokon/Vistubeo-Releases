@@ -36,12 +36,15 @@ Vistubeo Public EditionはWindows x64向けのonedir ZIPで配布します。イ
 
 Microsoft Visual C++ Redistributable x64が必要です。VistubeoのZIPにはVC Runtimeを同梱しません。未導入の場合、Vistubeoが起動できないことがあります。Microsoft公式の[Latest supported Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)を確認し、x64版を導入してください。直接ダウンロードは[vc_redist.x64.exe](https://aka.ms/vc14/vc_redist.x64.exe)です。
 
-## v0.60.0の改善
+## v0.61.0の改善
 
-- UI対応言語を、日本語、English、한국어、简体中文、繁體中文の5言語へ拡張しました。
-- AI出力言語に、한국어、简体中文、繁體中文を追加しました。
-- Settings画面をカード型に整理し、多言語表示時のレイアウトを改善しました。
-- UIフォントと字幕・AI本文のフォントを分離し、別言語UIでも本文を読みやすく表示できるよう改善しました。
+- 動画や通信の失敗後でも再操作しやすいよう、状態管理を改善しました。
+- 同じ動画を再読み込みした際に、古いAI質問結果が表示される可能性を修正しました。
+- 動画時間を超えるタイムスタンプの検証を強化しました。
+- 字幕描画処理を効率化し、長い字幕や検索結果の表示処理を改善しました。
+- 動画時間を取得できない通常動画をLIVEと誤表示しないよう改善しました。
+- Markdown保存を安全なatomic保存方式へ改善しました。
+- Full EditionのFFmpeg終了処理と、エラー時の安全性を改善しました。
 
 ## 基本的な使い方
 

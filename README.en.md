@@ -36,12 +36,15 @@ Vistubeo Public Edition is distributed as a Windows x64 onedir ZIP. There is no 
 
 Microsoft Visual C++ Redistributable x64 is required. It is not bundled in the Vistubeo ZIP, and Vistubeo may not start if it is missing. See Microsoft's [Latest supported Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and install the x64 version. The direct installer is [vc_redist.x64.exe](https://aka.ms/vc14/vc_redist.x64.exe).
 
-## Improvements in v0.60.0
+## Improvements in v0.61.0
 
-- Added five supported UI languages: Japanese, English, Korean, Simplified Chinese, and Traditional Chinese.
-- Added Korean, Simplified Chinese, and Traditional Chinese as AI output languages.
-- Organized Settings into cards and improved its layout for multilingual UI text.
-- Separated UI fonts from transcript and AI-content fonts to improve readability across languages.
+- Improved recovery after video and network failures so that the app is easier to use again.
+- Prevented stale AI question results from appearing after reloading the same video.
+- Strengthened validation for timestamps beyond the video duration.
+- Improved transcript rendering efficiency for long transcripts and search results.
+- Prevented regular videos with an unknown duration from being shown as LIVE.
+- Switched Markdown saving to a safer atomic-save approach.
+- Improved FFmpeg cleanup and error safety in Full Edition.
 
 ## Basic use
 
