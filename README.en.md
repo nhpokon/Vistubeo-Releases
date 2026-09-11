@@ -36,11 +36,12 @@ Vistubeo Public Edition is distributed as a Windows x64 onedir ZIP. There is no 
 
 Microsoft Visual C++ Redistributable x64 is required. It is not bundled in the Vistubeo ZIP, and Vistubeo may not start if it is missing. See Microsoft's [Latest supported Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and install the x64 version. The direct installer is [vc_redist.x64.exe](https://aka.ms/vc14/vc_redist.x64.exe).
 
-## Improvements in v0.59.0
+## Improvements in v0.60.0
 
-- Improved the Settings window so it is less likely to extend beyond the screen on lower-resolution displays.
-- Preserved scrolling and MouseWheel operation in the Settings window.
-- Performed stability checks that include repeated operations.
+- Added five supported UI languages: Japanese, English, Korean, Simplified Chinese, and Traditional Chinese.
+- Added Korean, Simplified Chinese, and Traditional Chinese as AI output languages.
+- Organized Settings into cards and improved its layout for multilingual UI text.
+- Separated UI fonts from transcript and AI-content fonts to improve readability across languages.
 
 ## Basic use
 
@@ -56,7 +57,7 @@ If a video URL contains a playlist query, Vistubeo processes only the video spec
 
 When you save Settings, the display language, font size, summary length, timestamp count, AI output language, and automatic-AI settings apply immediately. The Settings window stays open and continues to show the saved current values.
 
-Choose **Match Display Language**, **Japanese**, or **English** for AI Output Language. **Match Display Language** uses the current display language; **Japanese** and **English** stay fixed independently of the display language. This setting applies to AI summaries, AI chapters, answers to AI questions, AI translation of transcripts, automatic summaries, automatic translations, and live AI summaries in Full Edition. Saving Settings alone does not call the OpenAI API.
+Choose the display language from **Japanese**, **English**, **Korean**, **Simplified Chinese**, or **Traditional Chinese**. For AI Output Language, choose **Match Display Language** or any of those five languages. **Match Display Language** uses the current display language; an explicitly selected language stays fixed independently of it. This setting applies to AI summaries, AI chapters, answers to AI questions, AI translation of transcripts, automatic summaries, automatic translations, and live AI summaries in Full Edition. Saving Settings alone does not call the OpenAI API.
 
 Use **Reset to Defaults** in Settings to restore application settings to their defaults. It does not delete a saved OpenAI API key, operating-system environment variables, or migration information. Major error messages also explain the next action to take.
 

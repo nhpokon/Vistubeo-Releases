@@ -36,11 +36,12 @@ Vistubeo Public EditionはWindows x64向けのonedir ZIPで配布します。イ
 
 Microsoft Visual C++ Redistributable x64が必要です。VistubeoのZIPにはVC Runtimeを同梱しません。未導入の場合、Vistubeoが起動できないことがあります。Microsoft公式の[Latest supported Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)を確認し、x64版を導入してください。直接ダウンロードは[vc_redist.x64.exe](https://aka.ms/vc14/vc_redist.x64.exe)です。
 
-## v0.59.0の改善
+## v0.60.0の改善
 
-- 低解像度環境で、設定画面が画面外へ出にくいよう改善しました。
-- 設定画面のスクロールとMouseWheel操作を維持しています。
-- 繰り返し操作を含む安定性確認を実施しました。
+- UI対応言語を、日本語、English、한국어、简体中文、繁體中文の5言語へ拡張しました。
+- AI出力言語に、한국어、简体中文、繁體中文を追加しました。
+- Settings画面をカード型に整理し、多言語表示時のレイアウトを改善しました。
+- UIフォントと字幕・AI本文のフォントを分離し、別言語UIでも本文を読みやすく表示できるよう改善しました。
 
 ## 基本的な使い方
 
@@ -56,7 +57,7 @@ Microsoft Visual C++ Redistributable x64が必要です。VistubeoのZIPにはVC
 
 設定を保存すると、表示言語、文字サイズ、要約の長さ、タイムスタンプ件数、AI出力言語、自動AI設定はすぐに反映されます。設定画面は閉じず、保存した現在値をそのまま確認できます。
 
-AI出力言語は「表示言語に合わせる」「日本語」「English」から選択できます。「表示言語に合わせる」は現在の表示言語を使用し、「日本語」「English」は表示言語とは別に固定できます。この設定はAI要約、AIチャプター、AI質問の回答、字幕のAI翻訳、自動要約、自動翻訳、およびFull EditionのライブAI要約に適用されます。設定を保存するだけではOpenAI APIを呼び出しません。
+表示言語は「日本語」「English」「한국어」「简体中文」「繁體中文」から選択できます。AI出力言語は「表示言語に合わせる」と、これら5言語から選択できます。「表示言語に合わせる」は現在の表示言語を使用し、明示的に選んだ言語は表示言語とは別に固定できます。この設定はAI要約、AIチャプター、AI質問の回答、字幕のAI翻訳、自動要約、自動翻訳、およびFull EditionのライブAI要約に適用されます。設定を保存するだけではOpenAI APIを呼び出しません。
 
 設定の「初期設定に戻す」を使うと、アプリ設定を初期値へ戻せます。保存済みのOpenAI APIキー、OS環境変数、移行情報は削除しません。主なエラー表示には、次に確認する操作を案内します。
 
