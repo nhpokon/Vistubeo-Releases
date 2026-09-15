@@ -36,7 +36,9 @@ Vistubeo Public EditionはWindows x64向けのonedir ZIPで配布します。イ
 
 Microsoft Visual C++ Redistributable x64が必要です。VistubeoのZIPにはVC Runtimeを同梱しません。未導入の場合、Vistubeoが起動できないことがあります。Microsoft公式の[Latest supported Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)を確認し、x64版を導入してください。直接ダウンロードは[vc_redist.x64.exe](https://aka.ms/vc14/vc_redist.x64.exe)です。
 
-## v0.62.0の改善
+## v0.62.1の改善
+
+- Windows実行ファイルへVistubeoの正式アプリアイコンを埋め込み、Windows Explorerと新規ショートカットで製品アイコンが表示されるようにしました。
 
 - 字幕、AI要約、AI回答のコピーと、URL・検索・質問欄の編集操作に対応するWindows標準風の右クリックメニューを追加しました。
 - 通常動画の時間を取得できない場合は、LIVEではなく時間取得不可と明確に表示します。

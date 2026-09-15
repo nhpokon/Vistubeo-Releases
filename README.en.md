@@ -36,7 +36,9 @@ Vistubeo Public Edition is distributed as a Windows x64 onedir ZIP. There is no 
 
 Microsoft Visual C++ Redistributable x64 is required. It is not bundled in the Vistubeo ZIP, and Vistubeo may not start if it is missing. See Microsoft's [Latest supported Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) and install the x64 version. The direct installer is [vc_redist.x64.exe](https://aka.ms/vc14/vc_redist.x64.exe).
 
-## Improvements in v0.62.0
+## Improvements in v0.62.1
+
+- Embedded the official Vistubeo application icon in the Windows executable so Windows Explorer and newly created shortcuts display the product icon.
 
 - Added Windows-style right-click menus for copying displayed transcripts, AI summaries, and AI answers, plus standard editing commands in URL, search, and question fields.
 - Improved rendering and searching for long transcripts while preserving multilingual text display.
